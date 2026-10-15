@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mindful Wallpaper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <div class="wallpaper" id="wallpaper">
+      <img id="bgImage" src="images/1.svg" alt="Calming background image" />
+      <div class="overlay" id="overlay">
+        <blockquote id="quote" class="quote" aria-live="polite"></blockquote>
+      </div>
+    </div>
+
+    <nav class="controls" aria-label="Wallpaper controls">
+      <button id="prevBtn" aria-label="Previous image">◀</button>
+      <button id="nextBtn" aria-label="Next image">▶</button>
+      <button id="shuffleBtn" aria-label="Shuffle images">Shuffle</button>
+      <button id="focusBtn" aria-pressed="false" aria-label="Toggle focus mode">Focus</button>
+      <button id="downloadBtn" aria-label="Download current image">Download</button>
+      <label class="auto-rotate">
+        <input id="autoToggle" type="checkbox" /> Auto-rotate
+      </label>
+    </nav>
+
+    <footer class="footer">
+      <small>Mindful Wallpaper — calming images + micro-prompts</small>
+    </footer>
+  </main>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
