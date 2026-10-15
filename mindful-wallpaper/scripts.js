@@ -88,5 +88,29 @@ document.addEventListener('keydown', (e)=>{
   if(e.key.toLowerCase() === 'f') toggleFocus();
 });
 
+// --- Respect prefers-reduced-motion: disable image hover transform if set ---
+const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// --- Theme toggle ---
+const themeBtn = document.getElementById('themeBtn');
+if (themeBtn) {
+  // initialize from stored preference
+  const saved = localStorage.getItem('mw_theme');
+  if (saved) document.documentElement.setAttribute('data-theme', saved);
+
+  themeBtn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('mw_theme', next);
+    themeBtn.setAttribute('aria-pressed', String(next === 'light'));
+    themeBtn.textContent = next === 'light' ? '☀️' : '🌙';
+  });
+
+  // set initial label
+  const cur = document.documentElement.getAttribute('data-theme') === 'light' ? '☀️' : '🌙';
+  themeBtn.textContent = cur;
+}
+
 // initialize
 show(0);
