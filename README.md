@@ -1,2 +1,2 @@
 # Repository-1_KB
-Mindful Wallpaper
+Mindful Wallpaper Project
