@@ -17,9 +17,9 @@
     <section class="hero">
       <div class="hero-inner">
         <h1>Mindful Wallpaper</h1>
-        <p class="lead">I build simple tools for quiet moments. Mindful Wallpaper is my beginner‑friendly experiment: a minimal web app that pairs soft, calming visuals with short mindfulness prompts. It’s designed so anyone — especially fellow new developers — can open the code, make a tiny change, and learn as they go.</p>
+        <p class="lead">I build simple tools for quiet moments. Mindful Wallpaper is my beginner‑friendly experiment: a minimal web app that pairs soft, calming visuals with short mindfulness pr[...]
         <div class="cta">
-          <a class="btn primary" href="https://kimberlybruton-sys.github.io/Repository-1_KB/" target="_blank" rel="noopener">Take a quiet moment — try demo</a>
+          <a class="btn primary" href="#controls" onclick="focusControls()" rel="noopener">Take a quiet moment — try demo</a>
           <a class="btn" href="https://github.com/kimberlybruton-sys/Repository-1_KB/tree/main/mindful-wallpaper" target="_blank" rel="noopener">View the code</a>
         </div>
       </div>
@@ -35,13 +35,13 @@
       <div class="overlay" id="overlay">
         <blockquote id="quote" class="quote" aria-live="polite">
           <span class="mark">“</span>
-          <span id="quoteText"></span>
+          <span id="quoteText">Breathe. You are present.</span>
         </blockquote>
       </div>
     </div>
 
     <!-- Floating minimal control bar -->
-    <nav class="controls floating" aria-label="Wallpaper controls">
+    <nav id="controls" class="controls floating" aria-label="Wallpaper controls">
       <button id="prevBtn" class="icon" aria-label="Previous image">‹</button>
       <button id="nextBtn" class="icon" aria-label="Next image">›</button>
       <button id="shuffleBtn" class="icon" aria-label="Shuffle images">⚄</button>

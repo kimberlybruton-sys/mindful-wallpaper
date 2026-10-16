@@ -32,7 +32,10 @@ let activeBg = bgA; // which image element is currently visible
 function swapBackground(i){
   index = (i + images.length) % images.length;
   const nextBg = activeBg === bgA ? bgB : bgA;
-  nextBg.src = images[index];
+  // only set src if changing to avoid reloading the same image
+  if (!nextBg.src || !nextBg.src.endsWith(images[index])){
+    nextBg.src = images[index];
+  }
   nextBg.alt = `Background ${index+1}`;
   quoteText.textContent = quotes[index % quotes.length];
   // wait for image to load before crossfading
@@ -58,6 +61,24 @@ function toggleFocus(){
   const isOn = focusBtn.getAttribute('aria-pressed') === 'true';
   focusBtn.setAttribute('aria-pressed', String(!isOn));
   document.getElementById('overlay').classList.toggle('hidden');
+}
+
+function focusControls(startAutoplay = false){
+  const controls = document.getElementById('controls') || document.querySelector('.controls');
+  if(controls){
+    try{
+      controls.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } catch (e){
+      controls.scrollIntoView();
+    }
+    const primary = document.getElementById('nextBtn') || controls.querySelector('button');
+    if(primary && typeof primary.focus === 'function'){
+      setTimeout(()=> primary.focus(), 300);
+    }
+  }
+  if(startAutoplay && typeof startAuto === 'function'){
+    startAuto();
+  }
 }
 
 function startAuto(){ stopAuto(); autoTimer = setInterval(next, intervalMs); }
