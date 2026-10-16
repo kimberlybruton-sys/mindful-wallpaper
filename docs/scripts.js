@@ -60,7 +60,6 @@ function toggleFocus(){
   document.getElementById('overlay').classList.toggle('hidden');
 }
 
-let autoTimer = null;
 function startAuto(){ stopAuto(); autoTimer = setInterval(next, intervalMs); }
 function stopAuto(){ if(autoTimer) { clearInterval(autoTimer); autoTimer = null; } }
 
