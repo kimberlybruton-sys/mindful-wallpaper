@@ -124,3 +124,6 @@ html,body,#app{height:100%;margin:0;font-family:var(--font-sans);background:var(
   .bg.active{ transform:none !important; }
   .controls .icon:hover{ transform:none; }
 }
+
+/* anchor spacing so the scroll lands slightly above the fixed controls */
+#controls-anchor{ display:block; height:1px; margin-bottom:6vh; }
