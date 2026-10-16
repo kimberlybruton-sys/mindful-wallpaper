@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mindful Wallpaper — Premium Zen</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" id="app">
+
+    <!-- Hero / intro for the landing page -->
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Mindful Wallpaper</h1>
+        <p class="lead">I build simple tools for quiet moments. Mindful Wallpaper is my beginner‑friendly experiment: a minimal web app that pairs soft, calming visuals with short mindfulness prompts. It’s designed so anyone — especially fellow new developers — can open the code, make a tiny change, and learn as they go.</p>
+        <div class="cta">
+          <a class="btn primary" href="https://kimberlybruton-sys.github.io/Repository-1_KB/" target="_blank" rel="noopener">Take a quiet moment — try demo</a>
+          <a class="btn" href="https://github.com/kimberlybruton-sys/Repository-1_KB/tree/main/mindful-wallpaper" target="_blank" rel="noopener">View the code</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wallpaper" id="wallpaper" aria-hidden="false">
+      <!-- Two layered images for smooth crossfade + gentle Ken Burns -->
+      <img id="bgA" class="bg active" src="images/1.svg" alt="Calming background image A" />
+      <img id="bgB" class="bg" src="images/2.svg" alt="Calming background image B" />
+
+      <div class="vignette" aria-hidden="true"></div>
+
+      <div class="overlay" id="overlay">
+        <blockquote id="quote" class="quote" aria-live="polite">
+          <span class="mark">“</span>
+          <span id="quoteText"></span>
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- Floating minimal control bar -->
+    <nav class="controls floating" aria-label="Wallpaper controls">
+      <button id="prevBtn" class="icon" aria-label="Previous image">‹</button>
+      <button id="nextBtn" class="icon" aria-label="Next image">›</button>
+      <button id="shuffleBtn" class="icon" aria-label="Shuffle images">⚄</button>
+      <button id="focusBtn" class="icon" aria-pressed="false" aria-label="Toggle focus mode">✧</button>
+      <button id="downloadBtn" class="icon" aria-label="Download current image">⬇</button>
+      <button id="themeBtn" class="icon" aria-pressed="false" aria-label="Toggle light/dark theme">☾</button>
+    </nav>
+
+    <footer class="footer">
+      <small>Mindful Wallpaper — premium • minimal • zen</small>
+    </footer>
+  </main>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
